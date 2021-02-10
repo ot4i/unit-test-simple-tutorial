@@ -33,7 +33,7 @@
 		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
-<!-- body::Start -->
+<!-- body::StartA -->
 		<body>
   	<!-- body content here -->
 	<div class="row">
@@ -162,19 +162,19 @@
 										
 										</li>
 									
-										<li> In the section labelled <span class="application">Input Data</span>, change the radio button selection to <span class="application">Use data file (*.json or *.xml)</span> and then click the <span class="Application">Browse</span> button. Select the file <span class="application">RawInput.xml</span> from the <span class="application">Other resources</span> section of the <span class="application">MyApplication</span> project in your workspace. This option creates a unit test using serialized input data which you already have available. The other radio button option configures the test for using a Message Assembly file with the extension .mxml. A Message Assembly file describes the internal representation of a message as it passes through a message flow (sometimes this is also called the logical tree) but this alternative is left for exploration in another tutorial.
+										<li> In the section labelled <span class="application">Select an input file to construct a message assembly to invoke the node</span>, click the <span class="Application">Browse</span> button. Select the file <span class="application">RawInput.xml</span> from the <span class="application">Other resources</span> section of the <span class="application">MyApplication</span> project in your workspace. This option creates a unit test using serialized input data which you already have available.
 										
 										</li>
 									
-										<li> In the section labelled <span class="application">Output Data</span>, change the radio button selection to <span class="application">Use data file (*.json or *.xml)</span> and then click the <span class="Application">Browse</span> button. Select the file <span class="application">RawOutput.json</span> from the <span class="application">Other resources</span> section of the <span class="application">MyApplication</span> project in your workspace.
+										<li> In the section labelled <span class="application">Select an output file to compare against the actual output message</span>, click the <span class="Application">Browse</span> button. Select the file <span class="application">RawOutput.json</span> from the <span class="application">Other resources</span> section of the <span class="application">MyApplication</span> project in your workspace.
 										
 										</li>
 									
-										<li> In the section labelled <span class="application">Assertions and Matchers to be included in the generated test</span>, tick the option to <span class="application">Assert output message body data</span>. You can scroll through the preview pane to see what the generated unit test will look like. Click the <span class="Application">Finish</span> button to generate the test.
+										<li> In the section labelled <span class="application">Assertions and Matchers to be included in the generated test</span>, you should see that this has caused the option to <span class="application">Assert output message body data</span> to become ticked. You can scroll through the preview pane to see what the generated unit test will look like. Click the <span class="Application">Finish</span> button to generate the test.
 										
 										</li>
 									
-										<li> You will find that a Test Project named <span class="application">MyApplication_IntegrationTest</span> is generated for you. The generated java unit test is opened for you (you can also find it in <span class="application">MyMessageFlow_Mapping_IntegrationTest.java</span>). The project has a resources folder where your input and output data files will have been placed. The generated Test Project has a project reference configured which points the Test Project at the application <span class="application">MyApplication</span>. On the next tab we will describe how to run the unit test you have just created.
+										<li> You will find that a Test Project named <span class="application">MyApplication_IntegrationTest</span> is generated for you. The generated java unit test is opened for you (you can also find it in <span class="application">MyMessageFlow_Mapping_001_IntegrationTest.java</span>). The project has a resources folder where your input and output data files will have been placed. The generated Test Project has a project reference configured which points the Test Project at the application <span class="application">MyApplication</span>. On the next tab we will describe how to run the unit test you have just created.
 										
 										</li>
 									
