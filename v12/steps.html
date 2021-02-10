@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
+		
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
+
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
+    	
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::Start -->
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4 class="title">Getting started with ACEv12 - Creating a Simple Unit Test <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns">
+		<a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm')" class="small right helplink">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn how ACE unit tests help you with rapid Test Driven Development by creating and executing a simple Java Unit Test. </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+		</div>
+	</div>
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs vertical"> 
+				<li class="tab-title tab-title-small active">
+				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
+				</li>
+			</ul>
+			<!-- editing -->
+			<div class="tabs-content panel-thin-blue vertical"> 
+		    	<div class="content active" id="panel21">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				      	<div class="row content-details">
+					      	<h4>Import a project</h4>
+					        
+						    
+								<p> Click <span class="uicontrol">Import</span> to add the required project to your workspace: </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> The application named <span class="application">MyApplication</span> will be imported into your workspace.
+										
+										
+											
+											<ul>
+											
+												
+													<li> <span class="application">MyApplication</span> provides a single message flow named <span class="resource">MyMessageFlow</span> which receives data over HTTP.</li>
+												
+													<li> The HTTPInput node is configured to expect an XML message which conforms to <span class="resource">MyModel.xsd</span> although the HTTPInput node itself is not set up to validate the message immediately.</li>
+												
+													<li> The next node in the flow is a graphical mapping node which transforms the message into a JSON output.</li>
+												
+													<li> The HTTPReply node at the end of the flow returns the JSON to the requester.</li>
+												
+											
+											</ul>
+											
+										
+										</li>
+									
+										<li> Now move to the Prepare tab where we describe how to create a unit test for the flow we have just imported.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to  Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+									
+							
+							</ul>
+						</div>
+						
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MyMessageFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
+				    </div>
+					
+		    	</div>
+		    	<div class="content" id="panel31">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
+						<div class="row content-details">
+						  	<h4>Create a unit test for the mapping node in the message flow</h4>
+						    
+						    
+								<p> <span class="application">MyApplication</span> contains <span class="application">MyMessageFlow</span> which should already be open in your workspace: </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Right-click the node in the message flow named <span class="application">Mapping</span> and choose the menu option to <span class="application">Create testcase</span>. The New Java Unit Test Class wizard will launch. Note that the Node Location fields will already have been populated with the name of the application, message flow, node and terminals.
+										
+										</li>
+									
+										<li> In the section labelled <span class="application">Input Data</span>, change the radio button selection to <span class="application">Use data file (*.json or *.xml)</span> and then click the <span class="Application">Browse</span> button. Select the file <span class="application">RawInput.xml</span> from the <span class="application">Other resources</span> section of the <span class="application">MyApplication</span> project in your workspace. This option creates a unit test using serialized input data which you already have available. The other radio button option configures the test for using a Message Assembly file with the extension .mxml. A Message Assembly file describes the internal representation of a message as it passes through a message flow (sometimes this is also called the logical tree) but this alternative is left for exploration in another tutorial.
+										
+										</li>
+									
+										<li> In the section labelled <span class="application">Output Data</span>, change the radio button selection to <span class="application">Use data file (*.json or *.xml)</span> and then click the <span class="Application">Browse</span> button. Select the file <span class="application">RawOutput.json</span> from the <span class="application">Other resources</span> section of the <span class="application">MyApplication</span> project in your workspace.
+										
+										</li>
+									
+										<li> In the section labelled <span class="application">Assertions and Matchers to be included in the generated test</span>, tick the option to <span class="application">Assert output message body data</span>. You can scroll through the preview pane to see what the generated unit test will look like. Click the <span class="Application">Finish</span> button to generate the test.
+										
+										</li>
+									
+										<li> You will find that a Test Project named <span class="application">MyApplication_IntegrationTest</span> is generated for you. The generated java unit test is opened for you (you can also find it in <span class="application">MyMessageFlow_Mapping_IntegrationTest.java</span>). The project has a resources folder where your input and output data files will have been placed. The generated Test Project has a project reference configured which points the Test Project at the application <span class="application">MyApplication</span>. On the next tab we will describe how to run the unit test you have just created.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4></h4>
+							<ul>
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+					<div class="small-12 medium-12 large-12 columns">
+					
+				    	<div class="row content-details">
+					      	<h4></h4>
+					        
+						    
+								<p> <h4>Run the Unit Test </h4></p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> In the <span class="Application">Application Development</span> view (by default in the top left of the Toolkit), locate the Test Project which you just created.
+										
+										</li>
+									
+										<li> Right click the Test Project named <span class="Application">MyApplication_IntegrationTest</span> and choose the option  <span class="Application">Run as &gt; Integration Server JUnit Test Runner</span>.
+										
+										</li>
+									
+										<li> After a few seconds, the Console view should be opened, which will show an independent integration server  being started in order to execute the unit test. There is no deployment step required - This is taken care of for you so that the application under test, and the Test Project which we just created are automatically available to the server.
+										
+										</li>
+									
+										<li> The JUnit view will open in the top left corner (just to the right of the Application Development view and the Patterns Explorer) and will show that the test which was generated ran successfully and passed.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> This tutorial has shown how to create and excute a simple Unit Test. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details"> 	
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to  Unit Testing your message flow">Unit Testing your message flow</a> </li>
+									
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+				</div>	
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div> <!-- row --></body>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>
