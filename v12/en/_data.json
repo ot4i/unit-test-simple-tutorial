@@ -1,0 +1,265 @@
+{
+    "version": "0.1",
+    "pageContent": 
+	{
+        "_comments": "object that contains data for page labels, buttons, etc.",
+        "navItems": 
+		{
+            "_common": 
+			{
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                },
+				"buttonViewDetails": 
+				{
+                    "name": "View Details",
+					"method": "viewDetails()",
+					"idName": "stepsViewDetails"	
+                }
+            }
+        }
+    },
+    "tutorial": 
+	{
+        "_common": 
+		{
+            "name": "Getting started with ACEv12 - Creating a Simple Unit Test",
+            "shortDescription": "Learn how ACE unit tests help you with rapid Test Driven Development by creating and executing a simple Java Unit Test.",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "10 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "MyMessageFlow",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+            }
+        },
+        "pageDetails": 
+		{
+            "topicsName": "Tutorial Topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList": 
+			[
+                {
+                    "title": "Java Unit Testing"
+                },
+                {
+                    "title": "Test Projects"
+                }				
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "A description of what the user will have learned or accomplished by running this tutorial.",
+            "outcomeList": 
+			[
+                {
+                    "title": "Use IBM App Connect Enterprise to create a test case for a Mapping node in a message flow."
+                }
+            ],
+            "summary": 
+			{
+                "overviewName": "OVERVIEW",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "sections": 
+				[
+                    {
+                        "section": "This tutorial uses a simple message flow in an application that receives an XML input message over HTTP, and converts the data into JSON using a Mapping node. The output JSON data is returned to the requesting client using an HTTPReply node. An example input message is provided."
+                    },
+                    {
+                        "section": "The tutorial provides the user with the message flow already constructed and describes step-by-step instructions for writing and executing a unit test for the flow. The new test is created in a Test Project (a new project type added for the first time in ACEv12) using the New Java Unit Test wizard. Once created the unit test is executed inside an independent integration server which is configured as part of the tutorial."
+					},
+                    {
+                        "section": "In IBM App Connect Enterprise, a Test Project (which has a reference to the application under test) is a container for all the resources that are required to run unit tests. There are no other pre-requisites needed by the scenario."
+                    }
+                ]
+            },
+			"helpLinks": 
+			{
+				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+				"title": "Find out more",
+				"details": 
+				[
+					{
+						"title": "Knowledge Center link to ",
+						"description": "Developing unit tests using Test Projects",
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
+					}
+				]
+			}
+        },
+        "pageSteps": 
+		{
+            "create": 
+			{
+                "overview": 
+				{
+                    "name": "Create",
+                    "heading": "Import a project",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections": 
+					[
+                        {
+                            "section": "Click <span class='uicontrol'>Import</span> to add the required project to your workspace:",
+							"steps": 
+                             {
+                                 "type":"ordered",
+                                 "details":
+								 [
+									 {
+									 "name":"The application named <span class='application'>MyApplication</span> will be imported into your workspace.",
+									 "details":"The application named <span class='application'>MyApplication</span> will be imported into your workspace.",                                 
+									 "substeps": 
+                                     	{
+                                         "type": "unordered",
+                                         "details": 
+                                         	[
+                                           		{
+												"details": "<span class='application'>MyApplication</span> provides a single message flow named <span class='resource'>MyMessageFlow</span> which receives data over HTTP."													
+												},
+												{
+												"details": "The HTTPInput node is configured to expect an XML message which conforms to <span class='resource'>MyModel.xsd</span> although the HTTPInput node itself is not set up to validate the message immediately."
+												},
+												{
+												"details": "The next node in the flow is a graphical mapping node which transforms the message into a JSON output."
+												},
+												{
+												"details": "The HTTPReply node at the end of the flow returns the JSON to the requester."
+												}
+											]	
+										}
+									 },
+									 {
+									"details":"Now move to the Prepare tab where we describe how to create a unit test for the flow we have just imported."
+									 }
+								 ]
+							 }
+						}
+					]
+					
+								 
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing integration solutions by using applications",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+							"type": "web"
+                        }
+                    ]
+                },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare": 
+			{
+                "overview": 
+				{
+                    "name": "Prepare",
+                    "heading": "Create a unit test for the mapping node in the message flow",
+                    "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
+                    "sections": 
+		     [
+			  {
+              "section":"<span class='application'>MyApplication</span> contains <span class='application'>MyMessageFlow</span> which should already be open in your workspace:",				
+                "steps":
+                {
+                "type":"ordered",
+                "details":
+                  [                    					
+					{ 
+                      "details":"Right-click the node in the message flow named <span class='application'>Mapping</span> and choose the menu option to <span class='application'>Create testcase</span>. The New Java Unit Test Class wizard will launch. Note that the Node Location fields will already have been populated with the name of the application, message flow, node and terminals."
+					},
+					{ 
+                      "details":"In the section labelled <span class='application'>Select an input file to construct a message assembly to invoke the node</span>, click the <span class='Application'>Browse</span> button. Select the file <span class='application'>RawInput.xml</span> from the <span class='application'>Other resources</span> section of the <span class='application'>MyApplication</span> project in your workspace. This option creates a unit test using serialized input data which you already have available."
+                    },					
+					{ 
+                      "details":"In the section labelled <span class='application'>Select an output file to compare against the actual output message</span>, click the <span class='Application'>Browse</span> button. Select the file <span class='application'>RawOutput.json</span> from the <span class='application'>Other resources</span> section of the <span class='application'>MyApplication</span> project in your workspace."
+                    },
+					{ 
+                      "details":"In the section labelled <span class='application'>Assertions and Matchers to be included in the generated test</span>, you should see that this has caused the option to <span class='application'>Assert output message body data</span> to become ticked. You can scroll through the preview pane to see what the generated unit test will look like. Click the <span class='Application'>Finish</span> button to generate the test."
+                    },
+					{ 
+                      "details":"You will find that a Test Project named <span class='application'>MyApplication_IntegrationTest</span> is generated for you. The generated java unit test is opened for you (you can also find it in <span class='application'>MyMessageFlow_Mapping_001_IntegrationTest.java</span>). The project has a resources folder where your input and output data files will have been placed. The generated Test Project has a project reference configured which points the Test Project at the application <span class='application'>MyApplication</span>. On the next tab we will describe how to run the unit test you have just created."
+                    }
+                  ]
+                }
+              }
+             ]
+                },
+                "helpLinks": 
+				{
+                }
+            },
+            "run": 
+			{
+                "overview": 
+				{
+                    "name": "Run",
+                    "heading": "",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                "sections":[                            
+                            {
+                                "section": "<h4>Run the Unit Test",
+                                "steps": {
+                                    "type": "ordered",
+                                    "details": [                                      
+                                    	{
+                                        "details": "In the <span class='Application'>Application Development</span> view (by default in the top left of the Toolkit), locate the Test Project which you just created."
+                                        },											
+										{
+											"details": "Right click the Test Project named <span class='Application'>MyApplication_IntegrationTest</span> and choose the option  <span class='Application'>Run as &gt; Integration Server JUnit Test Runner</span>."
+											},
+											{
+											"details": "After a few seconds, the Console view should be opened, which will show an independent integration server  being started in order to execute the unit test. There is no deployment step required - This is taken care of for you so that the application under test, and the Test Project which we just created are automatically available to the server."	
+											},
+											{
+											"details": "The JUnit view will open in the top left corner (just to the right of the Application Development view and the Patterns Explorer) and will show that the test which was generated ran successfully and passed."
+											}
+                                      ]
+                                  }                            
+                        },			
+			{
+			    "section": "This tutorial has shown how to create and excute a simple Unit Test."
+			}
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[                        
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Unit Testing your message flow",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+							"type": "web"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
