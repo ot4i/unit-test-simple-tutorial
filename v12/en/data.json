@@ -158,10 +158,19 @@
                     "heading": "",
                     "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
                     "sections": 
-		     [
-				 {
-				 	"section": "<b>Create a unit test for the mapping node in the message flow</b><br>From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."					 
-				 },
+		     [				 
+				  {
+                "section":"<b>Create a unit test for the mapping node in the message flow</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details":"From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."
+                    }
+				  ]
+				}
+				  },
+					
 				 {
                 "section":"<b>Testing using the Flow Exerciser</b>",
                 "steps":{
