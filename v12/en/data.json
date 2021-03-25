@@ -67,7 +67,7 @@
             ],
             "summary": 
 			{
-                "overviewName": "OVERVIEW",
+                "overviewName": "Overview",
                 "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
                 "sections": 
 				[
