@@ -32,8 +32,8 @@
 	{
         "_common": 
 		{
-            "name": "Getting started with ACEv12 - Creating a Simple Unit Test",
-            "shortDescription": "Learn how ACE unit tests help you with rapid Test Driven Development by creating and executing a simple Java Unit Test.",
+            "name": "Getting started - Creating a Simple Unit Test",
+            "shortDescription": "Learn how IBM App Connect Enterprise unit tests help you with rapid Test Driven Development by creating and executing a simple Java Unit Test.",
             "durationText": "This tutorial takes approximately",
             "durationTime": "10 minutes",
             "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
@@ -75,7 +75,7 @@
                         "section": "This tutorial uses a simple message flow in an application that receives an XML input message over HTTP, and converts the data into JSON using a Mapping node. The output JSON data is returned to the requesting client using an HTTPReply node. An example input message is provided."
                     },
                     {
-                        "section": "The tutorial provides the user with the message flow already constructed and describes step-by-step instructions for writing and executing a unit test for the flow. The new test is created in a Test Project (a new project type added for the first time in ACEv12) using the New Java Unit Test wizard. Once created the unit test is executed inside an independent integration server which is configured as part of the tutorial."
+                        "section": "The tutorial provides the user with the message flow already constructed and describes the step-by-step instructions for writing and executing a unit test for the flow. The new test is created in a Test Project (a new project type added for the first time in IBM App Connect Enterprise 12) using the New Java Unit Test wizard. Once created the unit test is executed inside an independent integration server which is configured as part of the tutorial."
 					},
                     {
                         "section": "In IBM App Connect Enterprise, a Test Project (which has a reference to the application under test) is a container for all the resources that are required to run unit tests. There are no other pre-requisites needed by the scenario."
@@ -109,45 +109,22 @@
                     "sections": 
 					[
                         {
-                            "section": "Click <span class='uicontrol'>Import</span> to add the required project to your workspace:",
-							"steps": 
-                             {
-                                 "type":"ordered",
-                                 "details":
-								 [
-									 {
-									 "name":"The application named <span class='application'>MyApplication</span> will be imported into your workspace.",
-									 "details":"The application named <span class='application'>MyApplication</span> will be imported into your workspace.",                                 
-									 "substeps": 
-                                     	{
-                                         "type": "unordered",
-                                         "details": 
-                                         	[
-                                           		{
-												"details": "<span class='application'>MyApplication</span> provides a single message flow named <span class='resource'>MyMessageFlow</span> which receives data over HTTP."													
-												},
-												{
-												"details": "The HTTPInput node is configured to expect an XML message which conforms to <span class='resource'>MyModel.xsd</span> although the HTTPInput node itself is not set up to validate the message immediately."
-												},
-												{
-												"details": "The next node in the flow is a graphical mapping node which transforms the message into a JSON output."
-												},
-												{
-												"details": "The HTTPReply node at the end of the flow returns the JSON to the requester."
-												}
-											]	
-										}
-									 },
-									 {
-									"details":"Now move to the Prepare tab where we describe how to create a unit test for the flow we have just imported."
-									 }
-								 ]
-							 }
-						}
-					]
-					
-								 
-                },
+                            "section": "Click <span class='uicontrol'>Import</span> to add the required project to your workspace:"
+						},
+						{
+							"section": "The application named <span class='application'>MyApplication</span> will be imported into your workspace."
+						},
+						{
+							"section": "<span class='application'>MyApplication</span> provides a single message flow named <span class='resource'>MyMessageFlow</span> which receives data over HTTP."													
+						},
+						{
+							"section": "The HTTPInput node is configured to expect an XML message which conforms to <span class='resource'>MyModel.xsd</span> although the HTTPInput node itself is not set up to validate the message immediately. The next node in the flow is a graphical mapping node which transforms the message into a JSON output. The HTTPReply node at the end of the flow returns the JSON to the requester."
+						},
+						{
+							"section":"Now move to the Prepare section where we describe how to create a unit test for the flow we have just imported."
+						 }
+					 ]
+				 },
                 "helpLinks": 
 				{
                     "title": "Find out more",
@@ -182,27 +159,47 @@
                     "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
                     "sections": 
 		     [
+				 {
+				 	"section": "From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."					 
+				 },
+				 {
+                "section":"<b>Testing using the Flow Exerciser</b>",
+                "steps":{
+                  "type":"ordered",
+                  "details":[
+                    {
+                      "details":"The imported message flow <span class='application'>MyMessageFlow</span> should still be open. At the top of the flow canvas, click the Flow Exerciser icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' />. If prompted (which you will be if your Toolkit has known connections to more than one server), select the <span class='application'>TEST_SERVER</span> integration server that you just created and agree to the confirmation dialog which warns that the message flow is owned by an Application. After a few seconds another confirmation dialog will appear with a Ready to record message status. Read through the information on the dialog and click Close."
+                    },
+                    {
+                      "details":"Back at the top of the flow, click on the Send Message icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png' alt='' /> and when the dialog opens, select the provided input message:<br><code>&lt;Message&gt;&lt;Child&gt;hello world&lt;/Child&gt;&lt;/Message&gt;</code><br>Click Send to push the data into the flow."
+                    },
+                    {
+                      "details":"You should receive a reply message from the flow. The XML will have been transformed into a JSON message and the data will have been converted to upper case:<br><code>{\"Output\": \"HELLO WORLD\"}</code>. Click close on the testing dialog"
+                    }
+                  ]
+                }
+              },
 			  {
-              "section":"<span class='application'>MyApplication</span> contains <span class='application'>MyMessageFlow</span> which should already be open in your workspace:",				
+              "section":"<b>Creating the Test Case</b>",				
                 "steps":
                 {
                 "type":"ordered",
                 "details":
                   [                    					
 					{ 
-                      "details":"Right-click the node in the message flow named <span class='application'>Mapping</span> and choose the menu option to <span class='application'>Create testcase</span>. The New Java Unit Test Class wizard will launch. Note that the Node Location fields will already have been populated with the name of the application, message flow, node and terminals."
+                      "details":"With the flow still showing in recording mode, right-click the node in the message flow named <span class='application'>Mapping</span> and choose the menu option to <span class='application'>Create Test Case</span>. The Create test case wizard will launch. Note that the Node location fields will already have been populated with the name of the Application, Flow, Node, Input terminal and Output terminal."
 					},
 					{ 
-                      "details":"In the section labelled <span class='application'>Select an input file to construct a message assembly to invoke the node</span>, click the <span class='Application'>Browse</span> button. Select the file <span class='application'>RawInput.xml</span> from the <span class='application'>Other resources</span> section of the <span class='application'>MyApplication</span> project in your workspace. This option creates a unit test using serialized input data which you already have available."
+                      "details":"In the section labelled <span class='application'>Generated input file for constructing an input message assembly to invoke the node</span>, you will see that the recorded input message will be used when the test is generated. If you had more than one recorded message you could choose which one to use."
                     },					
 					{ 
-                      "details":"In the section labelled <span class='application'>Select an output file to compare against the actual output message</span>, click the <span class='Application'>Browse</span> button. Select the file <span class='application'>RawOutput.json</span> from the <span class='application'>Other resources</span> section of the <span class='application'>MyApplication</span> project in your workspace."
+                      "details":"In the section labelled <span class='application'>Generated output file to compare against the actual output message</span>, you will see that the recorded output message will be used when the test is generated."
                     },
 					{ 
-                      "details":"In the section labelled <span class='application'>Assertions and Matchers to be included in the generated test</span>, you should see that this has caused the option to <span class='application'>Assert output message body data</span> to become ticked. You can scroll through the preview pane to see what the generated unit test will look like. Click the <span class='Application'>Finish</span> button to generate the test."
+                      "details":"In the section labelled <span class='application'>Select matchers to be included in the generated test</span>, options are ticked for <span class='application'>Assert node call count</span> and <span class='application'>Assert terminal propagate count</span>.In the section labelled <span class='application'>Select message trees to compare in the generated test</span>, the <span class='application'>Message body</span> will have been selected. You can scroll through the preview pane to see what the generated unit test will look like. The preview is updated when you change the selected options on the left, but for this tutorial leave everything as the defaults, and click the <span class='Application'>Finish</span> button to generate the test."
                     },
 					{ 
-                      "details":"You will find that a Test Project named <span class='application'>MyApplication_IntegrationTest</span> is generated for you. The generated java unit test is opened for you (you can also find it in <span class='application'>MyMessageFlow_Mapping_001_IntegrationTest.java</span>). The project has a resources folder where your input and output data files will have been placed. The generated Test Project has a project reference configured which points the Test Project at the application <span class='application'>MyApplication</span>. On the next tab we will describe how to run the unit test you have just created."
+                      "details":"You will find that a Test Project named <span class='application'>MyApplication_IntegrationTest</span> is generated for you. The generated java unit test is opened for you (you can also find it in <span class='application'>MyApplication_MyMessageFlow_Mapping_0001_IntegrationTest.java</span>). The project has a resources folder where your input and output data files will have been created. The generated Test Project has a project reference configured which points the Test Project at the application <span class='application'>MyApplication</span>. In the next section we will describe how to run the unit test you have just created."
                     }
                   ]
                 }
