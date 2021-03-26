@@ -72,7 +72,7 @@
                 "sections": 
 				[
                     {
-                        "section": "This tutorial uses a simple message flow in an application that receives an XML input message over HTTP, and converts the data into JSON using a Mapping node. The output JSON data is returned to the requesting client using an HTTPReply node. An example input message is provided."
+                        "section": "This tutorial uses a simple message flow in an application that receives an XML input message over HTTP and converts the data into JSON using a Mapping node. The output JSON data is returned to the requesting client using an HTTPReply node. An example input message is provided."
                     },
                     {
                         "section": "The tutorial provides the user with the message flow already constructed and describes the step-by-step instructions for writing and executing a unit test for the flow. The new test is created in a Test Project (a new project type added for the first time in IBM App Connect Enterprise 12) using the New Java Unit Test wizard. Once created the unit test is executed inside an independent integration server which is configured as part of the tutorial."
