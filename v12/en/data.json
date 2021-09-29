@@ -236,7 +236,7 @@
                                         "details": "In the <span class='Application'>Application Development</span> view (by default in the top left of the Toolkit), locate the Test Project which you just created."
                                         },											
 										{
-											"details": "Right click the Test Project named <span class='Application'>MyApplication_IntegrationTest</span> and choose the option  <span class='Application'>Run as &gt; Integration Server JUnit Test Runner</span>."
+											"details": "Right click the Test Project named <span class='Application'>MyApplication_IntegrationTest</span> and choose the option  <span class='Application'>Run Test Project</span>."
 											},
 											{
 											"details": "After a few seconds, the Console view should be opened, which will show an independent integration server  being started in order to execute the unit test. There is no deployment step required - This is taken care of for you so that the application under test, and the Test Project which we just created are automatically available to the server."	
